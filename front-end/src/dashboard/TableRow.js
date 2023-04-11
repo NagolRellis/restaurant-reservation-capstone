@@ -30,7 +30,7 @@ export default function TableRow({ table }) {
     );
     if (result)
       finishTable(table_id, abortController.signal)
-        .then(() => window.location.reload())
+
     return () => abortController.abort();
   };
   
