@@ -136,7 +136,9 @@ function Routes() {
         <Search />
       </Route>
 
-
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
