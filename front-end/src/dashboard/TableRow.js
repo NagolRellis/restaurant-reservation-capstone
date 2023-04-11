@@ -50,6 +50,7 @@ export default function TableRow({ table }) {
 
       {table.status === "occupied" && (
         <td className="text-center">
+          <Link to={`/`}>
           <button
             className="btn btn-sm btn-outline-light"
             data-table-id-finish={table.table_id}
@@ -61,6 +62,7 @@ export default function TableRow({ table }) {
           >
             Finish
           </button>
+          </Link>
         </td>
       )}
     </tr>
