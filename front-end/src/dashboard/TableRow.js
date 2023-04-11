@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { finishTable, listTables } from "../utils/api";
 
 
@@ -23,6 +22,9 @@ export default function TableRow({ table }) {
   //     return () => abortController.abort();
   //   }
   // }
+
+
+
   const handleFinish = (table_id) => {
     const abortController = new AbortController();
     let result = window.confirm(
@@ -30,7 +32,7 @@ export default function TableRow({ table }) {
     );
     if (result)
       finishTable(table_id, abortController.signal)
-
+      
     return () => abortController.abort();
   };
   
@@ -51,19 +53,18 @@ export default function TableRow({ table }) {
 
       {table.status === "occupied" && (
         <td className="text-center">
-          <Link to={`/`}>
           <button
             className="btn btn-sm btn-outline-light"
             data-table-id-finish={table.table_id}
             onClick={(e) => {
               e.preventDefault();
               handleFinish(table.table_id);
+              window.location.href=`/`;
             }}
             type="button"
           >
             Finish
           </button>
-          </Link>
         </td>
       )}
     </tr>
