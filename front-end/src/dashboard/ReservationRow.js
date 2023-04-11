@@ -25,7 +25,7 @@ export default function ReservationRow({ reservation, loadDashboard }) {
         "cancelled",
         abortController.status
       )
-      .then(() => window.location.reload())
+  
 
 
       return () => abortController.abort();
@@ -61,6 +61,7 @@ export default function ReservationRow({ reservation, loadDashboard }) {
           </td>
 
           <td className="text-center">
+            <Link to={`/`}>
             <button
               className="btn btn-sm btn-outline-light"
               type="button"
@@ -69,6 +70,7 @@ export default function ReservationRow({ reservation, loadDashboard }) {
             >
               Cancel
             </button>
+            </Link>
           </td>
 
           <td className="text-center">
